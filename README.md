@@ -1,10 +1,7 @@
 # lab1_francomanzi
 Python application that calculates a student's final academic standing based on a pre-existing CSV file of course grades.
 
-# Grade Evaluator — ALU Individual Coding Lab
-
-**Course:** Introduction to Python Programming and Databases  
-**Year:** BSE Year 1 | Trimester 2  
+# Grade Evaluator — ALU Individual Coding Lab 
 
 ---
 
@@ -20,12 +17,8 @@ This project contains two tools:
 
 ---
 
-## Prerequisites
-
-| Tool | Version | Notes |
-|------|---------|-------|
-| Python | 3.7 + | Uses only standard library (`csv`, `sys`, `os`) |
-| Bash | 4.0 + | Available by default on Linux/macOS |
+Python 3.7
+Command Line Interface
 
 ---
 
@@ -59,7 +52,7 @@ Final Project - Text-Based Game,Summative,60,20
 - Formative weights must sum to exactly **60%**.  
 - Summative weights must sum to exactly **40%**.
 
-### Sample output (with the included grades.csv)
+### Sample output
 
 ```
 ══════════════════════════════════════════════════════════════
@@ -106,27 +99,6 @@ Final Project - Text-Based Game,Summative,60,20
 ══════════════════════════════════════════════════════════════
 ```
 
-### Calculation walkthrough
-
-| Assignment | Score | Weight | Contribution |
-|---|---|---|---|
-| Quiz | 85% | 20% | 17.00 |
-| Group Exercise | 40% | 20% | 8.00 |
-| Functions and Debugging Lab | 45% | 20% | 9.00 |
-| Midterm Project | 70% | 20% | 14.00 |
-| Final Project | 60% | 20% | 12.00 |
-| **Total** | | **100%** | **60.00** |
-
-- **Overall grade** = 60 / 100 = **60%**  
-- **GPA** = (60 / 100) × 5.0 = **3.00**  
-- **Formative average** = (85×20 + 40×20 + 45×20) / 60 = 3400/60 = **56.67%** → PASS ≥ 50%  
-- **Summative average** = (70×20 + 60×20) / 40 = 2600/40 = **65.00%** → PASS ≥ 50%  
-- **Final status** = **PASSED** (both categories cleared 50%)
-
-### Resubmission logic
-
-Both *Group Exercise* (40%) and *Functions and Debugging Lab* (45%) failed (scored below 50%)  
-and share the **highest weight** among failed formatives (20% each), so **both** are flagged.
 
 ---
 
@@ -146,7 +118,7 @@ chmod +x organizer.sh   # make executable (first run only)
 5. **Creates** a new empty `grades.csv` (with header) ready for the next batch.  
 6. **Appends** a log entry to `organizer.log` (entries accumulate across runs).
 
-### Sample output
+Sample output
 
 ```
 [INFO]  Created directory: archive/
@@ -164,21 +136,9 @@ chmod +x organizer.sh   # make executable (first run only)
 ==============================================
 ```
 
-### organizer.log format
 
-Each line represents one archival run:
+ Error Handling Reference
 
-```
-[20251105-170000]  original='grades.csv'  archived='archive/grades_20251105-170000.csv'
-[20251106-083012]  original='grades.csv'  archived='archive/grades_20251106-083012.csv'
-```
-
----
-
-## Error Handling Reference
-
-| Scenario | Behaviour |
-|---|---|
 | `grades.csv` not found | Clear error message + non-zero exit |
 | CSV file completely empty | Error: "file appears to be completely empty" |
 | CSV has header but no data rows | Error: "contains a header but no grade data" |
@@ -191,7 +151,7 @@ Each line represents one archival run:
 ## Repository Structure
 
 ```
-lab_<github_username>/
+lab1_francomanzi
 ├── grade-evaluator.py   # Python grade evaluation script
 ├── organizer.sh         # Bash archival script
 ├── grades.csv           # Sample grade data
